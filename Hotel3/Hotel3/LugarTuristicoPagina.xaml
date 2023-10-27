@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hotel3.LugarTuristicoPagina">
+    <ContentPage.Content>
+        <Grid RowDefinitions="300,Auto,Auto,Auto,Auto,Auto" Padding="20">
+            <Frame Grid.Row="0" CornerRadius="20" HasShadow="True">
+                <Image x:Name="Imagen" Margin="-20" Aspect="Fill"></Image>
+            </Frame>
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+                <Label x:Name="Nombre" FontAttributes="Bold" TextColor="#202020" FontSize="20"></Label>
+
+            </StackLayout>
+            <StackLayout Grid.Row="2" Orientation="Horizontal">
+                <Label x:Name="Direccion" TextColor="#202020"></Label>
+            </StackLayout>
+            <Label Grid.Row="3" Text="Detalles" FontSize="15" Margin="0,20,0,0" TextColor="#202020" FontAttributes="Bold"></Label>
+            <Label Grid.Row="4" x:Name="Distancia" TextColor="#202020"></Label>
+            <Grid Grid.Row="5" ColumnDefinitions="*,*,*,*" Margin="0,20">
+                <Frame Grid.Column="0" CornerRadius="20" BackgroundColor="White"  HasShadow="True">
+                    <StackLayout HorizontalOptions="Center">
+
+                        <Label Text="Wifi" TextColor="#202020"></Label>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="1" CornerRadius="20" BackgroundColor="White" HasShadow="True">
+                    <StackLayout HorizontalOptions="Center">
+
+                        <Label Text="TV" TextColor="#202020"></Label>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="2" CornerRadius="20" BackgroundColor="White" HasShadow="True">
+                    <StackLayout HorizontalOptions="Center">
+
+                        <Label Text="Dinner" TextColor="#202020"></Label>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="3" CornerRadius="20" BackgroundColor="White" HasShadow="True">
+                    <StackLayout HorizontalOptions="Center">
+
+                        <Label Text="Parkin" TextColor="#202020"></Label>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            <Label x:Name="Descripcion"
+               Grid.Row="6" TextColor="Gray"></Label>
+            <StackLayout Grid.Row="7" VerticalOptions="EndAndExpand" HeightRequest="60" Orientation="Horizontal" BackgroundColor="White" Margin="-20" Padding="20,10">
+                <Label x:Name="Precio" TextColor="#202020" FontSize="20" VerticalOptions="Center"></Label>
+                <Button Text="Viajar Ahora" CornerRadius="20" HorizontalOptions="EndAndExpand" WidthRequest="180" BackgroundColor="#202020" TextColor="White"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

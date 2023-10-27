@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hotel3.LugaresTuristicosPagina">
+    <ContentPage.Content>
+        <Grid Padding="20" ColumnDefinitions="*,auto" RowDefinitions="Auto,Auto,1,Auto,Auto,*">
+            <Label x:Name="Nombre" Grid.Row="0" Grid.Column="0"  TextColor="#202020" FontSize="30" FontAttributes="Bold"></Label>
+            <Label x:Name="Pref" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" TextColor="#202020" FontSize="20">
+                <!-- FontFamily="{StaticResource FontAwesomeSolid}" FontSize="20" -->
+                <!-- Text="{x:Static fontawesome:Solid.Filter }"></Label> -->
+            </Label>
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="0,20" HeightRequest="50" Orientation="Horizontal">
+                <Frame BorderColor="#f2f2f2" CornerRadius="10" HasShadow="False">
+                    <Label Text="1 - 10 Jan" TextColor="Navy" Margin="0,-5" FontAttributes="Bold"></Label>
+                </Frame>
+                <Frame BorderColor="#f2f2f2" CornerRadius="10" HasShadow="False">
+                    <Label Text="5 People" TextColor="Navy" Margin="0,-5" FontAttributes="Bold"></Label>
+                </Frame>
+                <Frame BorderColor="#f2f2f2" CornerRadius="10" HasShadow="False">
+                    <Label Text="2 Nights" TextColor="Navy" Margin="0,-5" FontAttributes="Bold"></Label>
+                </Frame>
+            </StackLayout>
+            <BoxView Grid.Row="2"  Grid.ColumnSpan="2" BackgroundColor="#f2f2f2" HorizontalOptions="FillAndExpand"></BoxView>
+            <StackLayout Grid.Row="3" Margin="0,20" Spacing="20" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Label Text="High Price" TextColor="#202020" FontAttributes="Bold"></Label>
+                <Label Text="Low Price" TextColor="Gray"></Label>
+                <Label Text="In Budget" TextColor="Gray"></Label>
+            </StackLayout>
+            <Frame Grid.Row="4" HeightRequest="10"  Grid.ColumnSpan="2" CornerRadius="20" HasShadow="False" BackgroundColor="#f2f2f2">
+                <Label Text="Select Property of Cananda"  Margin="0,-5" TextColor="Navy" FontAttributes="Bold" FontSize="15" HorizontalOptions="CenterAndExpand"></Label>
+            </Frame>
+            <CollectionView ItemsSource="{Binding Lugares}" Grid.Row="5" Grid.ColumnSpan="2" SelectionMode="Single" SelectionChanged="OnSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Frame BorderColor="#f2f2f2" CornerRadius="20" HasShadow="False" BackgroundColor="White">
+                                <Grid ColumnDefinitions="*,Auto" RowDefinitions="120,Auto,Auto,Auto">
+                                    <Image Grid.Row="0" Grid.ColumnSpan="2" Margin="-20,-20,-20,0" Source="{Binding Img}" Aspect="AspectFill"></Image>
+                                    <Frame CornerRadius="20" Opacity="0.5" BackgroundColor="#FC4B4B" Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="End" Margin="0,0,0,20">
+                                        <Label Text="5.8" TextColor="White"></Label>
+                                    </Frame>
+                                    <Label Grid.Row="1" Grid.Column="0" TextColor="#202020" FontAttributes="Bold" FontSize="20" Text="{Binding Nombre}" />
+                                    <Label Grid.Row="1" Grid.Column="1" TextColor="#202020" FontAttributes="Bold" FontSize="20" Text="{Binding Precio}" />
+                                    <Label Grid.Row="2" Grid.Column="0" TextColor="Gray" Text="{Binding Direccion}" />
+                                    <Label Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Distancia}" TextColor="Gray" />
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hotel3.CiudadesPagina">
+    <ContentPage.Content>
+        <Grid RowDefinitions="40,40,Auto,50,*" Padding="10">
+            <Label Grid.Row="1" Text="Ciudades" FontSize="18" FontAttributes="Bold" TextColor="#202020" VerticalOptions="CenterAndExpand"/>
+            <CollectionView ItemsSource="{Binding Ciudades}" Grid.Row="2"  SelectionMode="Single"
+                HorizontalOptions="FillAndExpand" VerticalOptions="Start"  SelectionChanged="OnSelectionChanged" >
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2"></GridItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate >
+                    <DataTemplate>
+                        <Grid RowDefinitions="150,Auto" Padding="5" ColumnDefinitions="*" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                            <Frame Grid.Row="0" Grid.RowSpan="2" CornerRadius="20" Padding="5" WidthRequest="180">
+                                <Image  Source="{Binding Img}" Margin="-5"  Aspect="AspectFill" ></Image>
+                            </Frame>
+                            <Label Grid.Row="0" Margin="10,0" FontAttributes="Bold" Text="{Binding Nombre}" TextColor="White" VerticalOptions="EndAndExpand"></Label>
+                            <Label Grid.Row="1" Margin="10,-6,0,10"  Text="{Binding Descripcion}" TextColor="White"></Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
